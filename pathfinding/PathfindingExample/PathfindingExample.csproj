@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0038764C-24C7-494E-BE09-BD75199FB217}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PathfindingExample</RootNamespace>
+    <AssemblyName>PathfindingExample</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8_waypoint_map.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Library\Extension.cs" />
+    <Compile Include="Library\formInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Library\formInformation.Designer.cs">
+      <DependentUpon>formInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Map\EMapObject.cs" />
+    <Compile Include="Library\Map\IMap.cs" />
+    <Compile Include="Library\Map\Map.cs" />
+    <Compile Include="Library\Map\MapDataChangedEventArgs.cs" />
+    <Compile Include="Library\PathFinder\IPathFinderWithPathScoring.cs" />
+    <Compile Include="Library\PathFinder\MoveDirection.cs" />
+    <Compile Include="Library\PathFinder\Node.cs" />
+    <Compile Include="Library\PathFinder\NodeListCountChanged.cs" />
+    <Compile Include="Library\PathFinder\Path.cs" />
+    <Compile Include="Library\PathFinder\PathFinderUsingAStar.cs" />
+    <Compile Include="Library\PathFinder\PathFinderUsingJumpPointSearch.cs" />
+    <Compile Include="PathfindingExample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PathfindingExample.Designer.cs">
+      <DependentUpon>PathfindingExample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Library\formInformation.resx">
+      <DependentUpon>formInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PathfindingExample.resx">
+      <DependentUpon>PathfindingExample.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_window_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_minimize_window_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_info_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_waypoint_map_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8_waypoint_map.ico" />
+    <Content Include="Pictures\Pathfinding01.JPG" />
+    <Content Include="Pictures\Pathfinding02.JPG" />
+    <Content Include="Pictures\Pathfinding03.JPG" />
+    <Content Include="Pictures\Pathfinding04.JPG" />
+    <None Include="Resources\icons8_waypoint_map_16px.png" />
+    <None Include="Resources\icons8_minimize_window_16px.png" />
+    <None Include="Resources\icons8_info_16px.png" />
+    <None Include="Resources\icons8_close_window_16px.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
